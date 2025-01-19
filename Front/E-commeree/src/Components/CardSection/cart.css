@@ -398,20 +398,21 @@ select:hover {
 .checkout-button{
   background-color:#000 ;
 }
+.product-routing{
+  display: flex;
+  
+}
 
 @media (max-width:768px){
   .cat{
     flex-direction:column;
   }
-  .product-latest{
-    margin-left: -2%;
-  }
   .category{
-    margin-left: 55px; 
+    margin-left: 15px;
   }
   .all{
-    width:98%;
-    padding:15px 15px;
+    width:97%;
+    padding:10px 0px;
   }
   .filters{
     font-size: 0.7rem;
