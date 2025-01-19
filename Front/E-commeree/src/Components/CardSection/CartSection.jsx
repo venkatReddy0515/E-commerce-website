@@ -11,7 +11,7 @@ function CartSection() {
   console.log(cart,add)
   const handleRemoveCart = (product) => {
     const token=localStorage.getItem("token");
-        Axios.post("http://localhost:5000/api/cart/delete",{productId:product._id},{headers:{Authorization:`Bearer ${token}`}})
+        Axios.post("https://e-commerce-website-zt25.onrender.com/api/cart/delete",{productId:product._id},{headers:{Authorization:`Bearer ${token}`}})
         .then((response)=>{
           console.log(response.data);
           add();
