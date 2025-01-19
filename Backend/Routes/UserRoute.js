@@ -74,7 +74,7 @@ router.post("/forget",async(req,res)=>{
     const {email}=req.body;
     console.log(email);
     try{
-        const findUser=await UserSchema.findOne({email});
+        const findUser=await userSchema.findOne({email});
         if(!findUser){
             return res.status(400).json({message:"Email not found"});
         }
@@ -94,7 +94,7 @@ router.post("/forget",async(req,res)=>{
 router.post("/reset",async(req,res)=>{
     const {email,password,otp}=req.body;
     try{
-        const find=await UserSchema.findOne({email});
+        const find=await userSchema.findOne({email});
         if(!find){
             return res.status(400).json({message:"email not found"});
         }
