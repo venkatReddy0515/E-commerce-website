@@ -32,7 +32,7 @@ const ShopContextProvider = (props) => {
     console.log(searchActive);
   }
   const productsData=async ()=>{
-    Axios.get("http://localhost:5000/api/product")
+    Axios.get("https://e-commerce-website-zt25.onrender.com/api/product")
     .then((response)=>{
       console.log(response.data);
       setProducts(response.data.product)
@@ -43,7 +43,7 @@ const ShopContextProvider = (props) => {
   }
   const add=()=>{
     const token=localStorage.getItem("token");
-    Axios.get("http://localhost:5000/api/cart",{headers:{Authorization:`Bearer ${token}`}})
+    Axios.get("https://e-commerce-website-zt25.onrender.com/api/cart",{headers:{Authorization:`Bearer ${token}`}})
     .then((response)=>{
       setCart(response.data.cartItems.items);
       setPrice(response.data.cartItems.totalPrice);
