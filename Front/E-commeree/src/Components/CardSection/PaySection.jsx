@@ -19,7 +19,7 @@ const PaySection = () => {
     const fetchCartTotal = async () => {
       try {
         const token=localStorage.getItem("token");
-        const response = await axios.get("http://localhost:5000/api/cart/total",{headers:{Authorization:`Bearer ${token}`}});
+        const response = await axios.get("https://e-commerce-website-zt25.onrender.com/api/cart/total",{headers:{Authorization:`Bearer ${token}`}});
         console.log(response.data);
         setTotal(response.data.totalPrice);
       } catch (error) {
@@ -31,7 +31,7 @@ const PaySection = () => {
 
 const handleForm=()=>{
   const token=localStorage.getItem("token");
-  axios.post("http://localhost:5000/api/place-order/order",{phone,street,city,district:disct,payment,pincode},{headers:{Authorization:`Bearer ${token}`}})
+  axios.post("https://e-commerce-website-zt25.onrender.com/api/place-order/order",{phone,street,city,district:disct,payment,pincode},{headers:{Authorization:`Bearer ${token}`}})
   .then((response)=>{
     console.log(response.data);
     setSuccess(true);
