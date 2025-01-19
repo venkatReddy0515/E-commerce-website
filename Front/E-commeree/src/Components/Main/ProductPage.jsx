@@ -50,7 +50,7 @@ function ProductPage() {
 
   const addToCart=()=>{
     const token=localStorage.getItem("token");
-    Axios.post("http://localhost:5000/api/cart/add",{productId:id,quantity:1,size:selectedSize,price:product.price},
+    Axios.post("https://e-commerce-website-zt25.onrender.com/api/cart/add",{productId:id,quantity:1,size:selectedSize,price:product.price},
     {
       headers:{Authorization:`Bearer ${token}`}
     }
