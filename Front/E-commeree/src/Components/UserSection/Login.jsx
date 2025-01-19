@@ -24,7 +24,7 @@ function Login() {
 
     if (upperCase.test(password) && specialCase.test(password)) {
       if (login === true) {
-        Axios.post("http://localhost:5000/api/login", { email, password })
+        Axios.post("https://e-commerce-website-zt25.onrender.com/api/login", { email, password })
           .then((response) => {
             setSuccess(true);
             setMessage("Login successfully!");
@@ -37,7 +37,7 @@ function Login() {
             setMessage("Login failed");
           });
       } else {
-        Axios.post("http://localhost:5000/api/signup", { username: userName, email, password })
+        Axios.post("https://e-commerce-website-zt25.onrender.com/api/signup", { username: userName, email, password })
           .then((response) => {
             setSuccess(true);
             setMessage("Signup  successfully!");
