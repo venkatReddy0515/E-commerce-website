@@ -80,7 +80,20 @@ function Categories() {
                                 key={product._id}
                             />
                         )) :
-                        <p>No products found based on your filter criteria.</p>
+                        <div>
+                            {
+                                products.map(product => (
+                                    <ProductsById
+                                        name={product.name}
+                                        image={product.image}
+                                        price={product.price}
+                                        rating={product.rating}
+                                        id={product._id}
+                                        key={product._id}
+                                    />
+                                    ))
+                            }
+                        </div>
                     }
                 </div>
             </div>
