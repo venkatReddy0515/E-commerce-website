@@ -1,0 +1,135 @@
+/* Main wrapper */
+.order-page {
+    font-family: 'Arial', sans-serif;
+    padding: 30px;
+
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+    margin: 0 auto;
+    color: #111111;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #00a859;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  h3 {
+    font-size: 1.2rem;
+    margin: 10px 0;
+  }
+  
+  /* Order content section */
+  .order-content {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    gap: 20px;
+  }
+  
+  /* Left side form section */
+  .order-form {
+    width: 48%;
+    padding: 25px;
+    color:#000;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .order-form input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 2px solid #444;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #101010;
+    transition: all 0.3s ease;
+  }
+  
+  .order-form input:focus {
+    border-color: #00a859; /* Green border on focus */
+    box-shadow: 0 0 8px rgba(0, 168, 89, 0.4);
+  }
+  
+  .order-form form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Right side payment section */
+  .payment-details {
+    width: 48%;
+    padding: 25px;
+    color:#000;
+    
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .payment-details select {
+    width: 100%;
+    padding: 12px;
+    margin: 15px 0;
+    border: 2px solid #444;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+  }
+  
+  .payment-details select:focus {
+    border-color: #00a859; /* Green border on focus */
+    box-shadow: 0 0 8px rgba(0, 168, 89, 0.4);
+  }
+  
+  .payment-details h3 {
+    margin-bottom: 10px;
+  }
+  
+  .payment-details h2 {
+    font-size: 1.5rem;
+    margin-top: 30px;
+    color: rgb(27, 26, 26);
+  }
+  
+  .payment-details .place-order-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #00a859; /* Green background for button */
+    color: rgb(27, 26, 26);
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .payment-details .place-order-btn:hover {
+    background-color: #007f3d; /* Darker green on hover */
+    transform: translateY(-2px);
+  }
+  
+  .payment-details .place-order-btn:active {
+    transform: translateY(0);
+  }
+  
+  /* Responsive design for smaller screens */
+  @media (max-width: 768px) {
+    .order-content {
+      flex-direction: column;
+    }
+  
+    .order-form, .payment-details {
+      width: 100%;
+    }
+  }
+  
+  

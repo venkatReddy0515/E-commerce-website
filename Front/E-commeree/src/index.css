@@ -1,0 +1,90 @@
+/* General styling for the message container */
+.message {
+    position: fixed;
+    top: 70px; /* Adjust for placement */
+    right: 20px;
+    width: 300px;
+    padding: 16px;
+    height:auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+    z-index: 1000;
+    color: #fff;
+    border-bottom: 4px solid transparent; /* Default transparent border */
+    animation: fadeOut 3s 3s forwards;
+}
+
+/* Prompt container */
+.promt {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+p{
+    color:black;
+}
+.green {
+    
+    animation: borderColorGreen 3s linear, fadeOut 3s 3s forwards;
+}
+
+
+.red {
+    animation: borderColorRed 3s linear, fadeOut 3s 3s forwards;
+}
+
+/* Close button styling */
+.promt h3 {
+    cursor: pointer;
+    font-size: 18px;
+    color: #333;
+    margin: 0;
+    transition: color 0.3s;
+}
+
+.promt h3:hover {
+    color: #555;
+}
+
+/* Green border color animation */
+@keyframes borderColorGreen {
+    0% {
+        border-bottom-color: transparent;
+    }
+    50% {
+        border-bottom-color: #28a745;
+    }
+    100% {
+        border-bottom-color: transparent;
+    }
+}
+
+/* Red border color animation */
+@keyframes borderColorRed {
+    0% {
+        border-bottom-color: transparent;
+    }
+    50% {
+        border-bottom-color: #dc3545;
+    }
+    100% {
+        border-bottom-color: transparent;
+    }
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+}
+.circular-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ddd;
+    
+}

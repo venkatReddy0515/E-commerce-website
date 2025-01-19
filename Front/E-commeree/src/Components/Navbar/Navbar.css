@@ -1,0 +1,235 @@
+/* nav-section container for flex layout */
+body{
+  padding:30px 20px;
+}
+.nav-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    box-shadow: 12px 4px 2px rgba(0,0,0,0.1);
+  
+  }
+  
+  /* Logo styling */
+  .logo {
+    flex: 0 0 30%; /* 30% of the container width */
+    font-size: 24px;
+    font-weight: bold;
+    cursor:pointer;
+  }
+  
+  .logo span {
+    color: #ff5722; /* Example color for the 'M' */
+  }
+  .close,.menu{
+    display:none;
+  }
+  
+  /* Navbar styling */
+  .nav-bar {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex: 1;
+
+  }
+  
+  .nav-bar ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    
+    position: static;
+  }
+  
+  .nav-bar li {
+    margin: 0 15px;
+    
+  }
+  
+  .nav-bar a {
+    text-decoration: none;
+    color: black;
+    font-size: 25px;
+  }
+  .user-logo{
+    margin:4px 20px;
+    font-size: 1.5rem;
+    cursor:pointer
+  }
+  
+  /* Cart and heart icon styling */
+  .cart-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .cart-section .fa-heart,
+  .cart-section .fa-cart-shopping {
+    margin: 0 10px;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  .cart-section .fa-heart:hover,
+  .cart-section .fa-cart-shopping:hover {
+    color: #ff5722;
+  }
+  .cart-icon-container {
+    position: relative;
+  }
+  
+  .cart-count {
+    position: absolute;
+    top: -8px; /* Adjust position */
+    right:0px; /* Adjust position */
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 3px 6px;
+    font-size: 12px;
+  }
+.search{
+  position: relative;
+  width:45px;
+  font-size:1.8rem;
+}
+
+.icon {
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.search-filed .faXmark {
+  margin-top: 10px;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.border {
+  border-bottom: 2px solid #df0c0c;
+  font-weight: bold;
+}
+
+.user-details {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.user-logo {
+  font-size: 24px;
+  color: #333;
+  transition: color 0.3s;
+}
+
+.user-logo:hover {
+  color: #1a73e8;
+}
+
+.user-de {
+  position: absolute;
+  top: 40px; /* Adjust based on the size of the icon */
+  right: 0;
+  display: none;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  z-index: 10;
+  min-width: 150px;
+}
+
+.user-de h6 {
+  margin: 0;
+  padding: 10px 15px;
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.user-de h6:hover {
+  background-color: #f0f0f0;
+  color: #1a73e8;
+}
+
+.user-details:hover .user-de {
+  display: block;
+}
+
+.user-details:hover .user-de{
+  display: block;
+}
+  @media (max-width:768px){
+    .nav-section{
+      gap:10px;
+      width:100%;
+    }
+    .nav-section h1{
+      padding:2% 1%;
+      font-size: 1.5rem;
+      margin: 2px 1px;
+    }
+    .nav-bar{
+      padding:2% 1%;
+      margin: 10px 20px;
+      flex-direction: row-reverse;
+    }
+    .nav-bar ul{
+      display: block;
+      position: absolute;
+      width:180px;
+      top:0;
+      left:-200px;
+      height: 100vh;
+      background-color: #e58a6e;
+      z-index: 10;
+    }
+    .nav-bar ul li{
+      margin:20px 40px;
+      font-size: 30px;
+      color:whitesmoke;
+    }
+    .close{
+      display:block;
+      font-size:1.5rem;
+      padding:10px 10px;
+      background-color: whitesmoke;
+      border-radius: 50%;
+      width:20px;
+      height:20px;
+    }
+    .menu{
+      display:block;
+      font-size:1.8rem;
+      margin: 10px auto;
+    }
+    .menu,.close{
+      cursor:pointer;
+    }
+    .search {
+      width: 80%;
+      position: relative;
+      left:0;
+    }
+
+  .search-hover {
+      opacity: 1;
+      visibility: visible;
+      margin: 8px 10px;
+      left:-180px;
+  }
+
+  .search-hover input {
+      width: 175%;
+      font-size: 1rem;
+      height:35px;
+      border: 2px solid #e58a6e;
+  }
+    
+  }

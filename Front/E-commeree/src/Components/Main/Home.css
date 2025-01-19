@@ -1,0 +1,140 @@
+/* Home.css */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    color: black;
+    box-sizing: border-box;
+}
+
+.head {
+    padding: 40px 20px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.header-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}
+
+.header-left .left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.header-left .left hr {
+    flex: 1;
+    border: 0;
+    border-top: 2px solid black;
+}
+
+.header-left h2 {
+    font-size: 1.5rem;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.header-left h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin: 10px 0;
+    line-height: 1.2;
+}
+
+.header-left h2:last-child {
+    cursor: pointer;
+    transition: transform 0.2s ease, color 0.3s ease;
+}
+
+.header-left,h2:last-child:hover {
+    color: gray;
+    transform: translateY(-3px);
+}
+
+.header-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-right img {
+    max-width: 80%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+/* Home.css */
+
+/* Container for the entire component */
+.heading {
+    text-align: center;
+    margin-top: 50px;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  
+  /* Style for the main title (h1) */
+  .heading h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+    display: inline-block;
+    position: relative;
+  }
+  
+  /* Style for the line under the title */
+  .heading .line {
+    width: 50%;
+    height: 2px;
+    background-color: #3498db; /* Blue color */
+    margin: 0 auto;
+    position: absolute;
+    bottom: 0px;
+    left: 31%;
+  }
+  
+  /* Optional: Add some spacing around the section */
+  .heading p {
+    margin-top: 20px;
+    font-size: 1rem;
+    color: #888;
+  }
+  
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header {
+        margin: 10px 10px;
+        flex-direction: column;
+        text-align: center;
+        overflow-x: hidden;
+    }
+
+    .header-left h1 {
+        font-size: 2.0rem;
+    }
+
+    .header-left h2 {
+        font-size: 1.2rem;
+    }
+
+    .header-right img {
+        max-width: 70%;
+    }
+}
