@@ -1,6 +1,6 @@
 const express=require("express");
 const userSchema=require("../Model/UserSchema");
-const bcrypt=require("bcrypt");
+const bcrypt=require("bcryptjs");
 const router=express.Router();
 const {generateToken}=require("./GenerateJwt");
 const User = require("../Model/UserSchema");
