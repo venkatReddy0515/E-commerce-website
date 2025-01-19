@@ -64,7 +64,7 @@ function Categories() {
                             <option value="All">All</option>
                             <option value="Men's">Men's</option>
                             <option value="Women's">Women's</option>
-                            <option value="Kid's">Kid's</option>
+                            <option value="Kids">Kid's</option>
                         </select>
                     </div>
                 </div>
