@@ -13,7 +13,7 @@ function ResetPassword(){
     const [otp,setOtp]=useState('');
     const sendOtp=()=>{
 
-        Axios.post("http://localhost:5000/api/forget",{email})
+        Axios.post("https://e-commerce-website-zt25.onrender.com/api/forget",{email})
         .then((response)=>{
             setSuccess(true);
             setMessage("otp send successfully");
@@ -41,7 +41,7 @@ function ResetPassword(){
         return ;
       }
 
-      Axios.post("http://localhost:5000/api/reset",{email,password,otp})
+      Axios.post("https://e-commerce-website-zt25.onrender.com/api/reset",{email,password,otp})
       .then((response)=>{
         setSuccess(true);
         setMessage("Password change successfully!,please login");
