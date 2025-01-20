@@ -11,7 +11,7 @@ function Orders() {
   }, [orderId]);
 
   const fetchOrders = () => {
-    Axios.get("http://localhost:5000/api/place-order/order-list")
+    Axios.get("https://e-commerce-website-zt25.onrender.com/api/place-order/order-list")
       .then((response) => {
         setOrders(response.data.order);
       })
@@ -23,7 +23,7 @@ function Orders() {
   const handleStatusChange = (e, id) => {
     const newStatus = e.target.value;
     setOrderId(id); // Trigger the useEffect to refetch orders
-    Axios.post("http://localhost:5000/api/place-order/status", {
+    Axios.post("https://e-commerce-website-zt25.onrender.com/api/place-order/status", {
       status: newStatus,
       id,
     })
