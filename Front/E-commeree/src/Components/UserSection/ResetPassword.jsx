@@ -45,6 +45,7 @@ function ResetPassword(){
       .then((response)=>{
         setSuccess(true);
         setMessage("Password change successfully!,please login");
+          navigate("/sign-in");
         console.log(response.data)
       })
       .catch((error)=>{
