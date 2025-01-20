@@ -1,39 +1,38 @@
-import React, { useEffect, useState } from 'react';
-import Axios from 'axios';
-import "./../App.css"
-import { set } from 'mongoose';
+import React, { useEffect, useState } from "react";
+import Axios from "axios";
+import "./Order.css";
+
 const ProductList = () => {
   const [products, setProducts] = useState([]);
-  useEffect(()=>{
-    
+
+  useEffect(() => {
     getProduct();
-  },[]);
-  const getProduct=()=>{
-    Axios.get("http://localhost:5000/api/product")
-    .then((response)=>{
-      console.log(response.data.product)
-      setProducts(response.data.product)
-    })
-    .catch((error)=>{
-      console.log(error);
-    })
-  }
-  const deleteBy =(id)=>{
-    Axios.post(`http://localhost:5000/api/product/remove/${id}`)
-    .then((response)=>{
-      getProduct();
-      console.log(response.data.product)
-    
-    })
-    .catch((error)=>{
-      console.log(error);
-    })
-    console.log("hyy")
-  }
+  }, []);
+
+  const getProduct = () => {
+    Axios.get("https://e-commerce-website-zt25.onrender.com/api/product")
+      .then((response) => {
+        setProducts(response.data.product);
+      })
+      .catch((error) => {
+        console.error("Error fetching products:", error);
+      });
+  };
+
+  const deleteBy = (id) => {
+    Axios.post(`https://e-commerce-website-zt25.onrender.com/api/product/remove/${id}`)
+      .then((response) => {
+        console.log("Product deleted:", response.data.product);
+        getProduct(); // Refresh the product list after deletion
+      })
+      .catch((error) => {
+        console.error("Error deleting product:", error);
+      });
+  };
 
   return (
-    <div>
-      <h2 className="list">Product List</h2>
+    <div className="product-list-container">
+      <h2>Product List</h2>
       <table>
         <thead>
           <tr>
@@ -47,11 +46,20 @@ const ProductList = () => {
         <tbody>
           {products.map((product) => (
             <tr key={product._id}>
-              <td><img src={product.image} alt="" /></td>
+              <td>
+                <img src={product.image} alt={product.name} />
+              </td>
               <td>{product.name}</td>
-              <td>{product.price} $</td>
+              <td>${product.price.toFixed(2)}</td>
               <td>{product.category}</td>
-              <td><button onClick={()=>deleteBy(product._id)}>Delete</button></td>
+              <td>
+                <button
+                  onClick={() => deleteBy(product._id)}
+                  className="delete"
+                >
+                  Delete
+                </button>
+              </td>
             </tr>
           ))}
         </tbody>
