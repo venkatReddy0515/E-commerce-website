@@ -32,7 +32,7 @@ const AddProduct = () => {
     };
 
     try {
-      const response = await axios.post('http://localhost:5000/api/product/add-product', productData);
+      const response = await axios.post('https://e-commerce-website-zt25.onrender.com/api/product/add-product', productData);
       console.log('Product added successfully:', response.data);
       alert('Product added successfully!');
       setName('');
