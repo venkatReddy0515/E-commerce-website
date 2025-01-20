@@ -1,44 +1,47 @@
-import React, { useEffect, useState } from 'react';
-import Axios from 'axios';
-import "./../App.css"
-function Orders () {
+import React, { useEffect, useState } from "react";
+import Axios from "axios";
+import "./Order.css";
+
+function Orders() {
   const [orders, setOrders] = useState([]);
-  const [orderId,setOrderId]=useState('');
+  const [orderId, setOrderId] = useState("");
 
-  useEffect(()=>{
-    update();
-  },[orderId])
+  useEffect(() => {
+    fetchOrders();
+  }, [orderId]);
 
-  const update=()=>{
+  const fetchOrders = () => {
     Axios.get("http://localhost:5000/api/place-order/order-list")
-    .then((response)=>{
-      console.log(response.data.order);
-      setOrders(response.data.order);
+      .then((response) => {
+        setOrders(response.data.order);
+      })
+      .catch((error) => {
+        console.error("Error fetching orders:", error);
+      });
+  };
+
+  const handleStatusChange = (e, id) => {
+    const newStatus = e.target.value;
+    setOrderId(id); // Trigger the useEffect to refetch orders
+    Axios.post("http://localhost:5000/api/place-order/status", {
+      status: newStatus,
+      id,
     })
-    .catch((error)=>{
-      console.log(error);
-    })
-  }
-  const handleStatus=(e,id)=>{
-    const {value}=e.target;
-    setOrderId(value);
-    console.log(value,id);
-    Axios.post("http://localhost:5000/api/place-order/status",{status:value,id})
-    .then((response)=>{
-      console.log(response.data);
-      update();
-    })
-    .catch((error)=>{
-      console.log(error);
-    })
-  }
+      .then((response) => {
+        console.log("Status updated:", response.data);
+        fetchOrders(); // Refetch orders after updating status
+      })
+      .catch((error) => {
+        console.error("Error updating status:", error);
+      });
+  };
+
   return (
-    <div>
+    <div className="orders-container">
       <h2>Orders</h2>
       <table>
         <thead>
           <tr>
-            
             <th>Order ID</th>
             <th>Customer</th>
             <th>Total</th>
@@ -51,10 +54,13 @@ function Orders () {
             <tr key={order._id}>
               <td>{order._id}</td>
               <td>{order.user.username}</td>
-              <td>{order.totalPrice}</td>
+              <td>${order.totalPrice.toFixed(2)}</td>
               <td>{order.status}</td>
               <td>
-                <select name="update status" id="" onChange={(e)=>handleStatus(e,order._id)}>
+                <select
+                  value={order.status}
+                  onChange={(e) => handleStatusChange(e, order._id)}
+                >
                   <option value="Pending">Pending</option>
                   <option value="Processing">Processing</option>
                   <option value="Shipped">Shipped</option>
@@ -67,6 +73,6 @@ function Orders () {
       </table>
     </div>
   );
-};
+}
 
 export default Orders;
