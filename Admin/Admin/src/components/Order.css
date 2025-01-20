@@ -1,0 +1,263 @@
+/* Orders Component Styles */
+
+.orders-container {
+    width: 95%;
+    margin: 35px 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .orders-container h2 {
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .orders-container table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+  }
+  
+  .orders-container th,
+  .orders-container td {
+    text-align: left;
+    padding: 12px;
+    border: 1px solid #ddd;
+  }
+  
+  .orders-container th {
+    background-color: thistle;
+    color: black;
+    font-weight: bold;
+  }
+  
+  .orders-container tr:nth-child(even) {
+    background-color: #f4f4f9;
+  }
+  
+  .orders-container tr:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+  
+  .orders-container select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: white;
+    cursor: pointer;
+  }
+  
+  .orders-container select:focus {
+    border-color: thistle;
+    outline: none;
+    box-shadow: 0 0 3px rgba(128, 0, 128, 0.5);
+  }
+  
+  .orders-container select option {
+    padding: 10px;
+  }
+  /* Product List Styles */
+
+.product-list-container {
+  width: 95%;
+  margin: 35px 20px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.product-list-container h2 {
+  font-size: 24px;
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.product-list-container table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
+
+.product-list-container th,
+.product-list-container td {
+  text-align: left;
+  padding: 12px;
+  border: 1px solid #ddd;
+}
+
+.product-list-container th {
+  background-color: thistle;
+  color: black;
+  font-weight: bold;
+}
+
+.product-list-container tr:nth-child(even) {
+  background-color: #f4f4f9;
+}
+
+.product-list-container tr:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.product-list-container img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 4px;
+  cursor:pointer;
+}
+
+.product-list-container .delete {
+  padding: 8px 12px;
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.product-list-container .delete:hover {
+  background-color: #c0392b;
+}
+
+
+
+  @media (max-width: 768px) {
+    .orders-container {
+      margin: 20px;
+      padding: 15px;
+    }
+  
+    .orders-container h2 {
+      font-size: 20px;
+    }
+    
+    .orders-container th,
+    .orders-container td {
+      font-size: 14px;
+      padding: 8px;
+    }
+  
+    .orders-container select {
+      font-size: 14px;
+      padding: 6px;
+    }
+    .product-list-container table {
+      display: block;
+      border: none;
+    }
+  
+    .product-list-container thead {
+      display: none;
+    }
+  
+    .product-list-container tbody {
+      display: block;
+    }
+  
+    .product-list-container tr {
+      display: flex;
+      flex-direction: column;
+      border: 1px solid #ddd;
+      margin-bottom: 15px;
+      background-color: #fff;
+    }
+  
+    .product-list-container td {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px;
+      border: none;
+      border-bottom: 1px solid #ddd;
+    }
+  
+    .product-list-container td:last-child {
+      border-bottom: none;
+    }
+  
+    .product-list-container td::before {
+      content: attr(data-label);
+      font-weight: bold;
+      color: #555;
+    }
+  
+    .product-list-container img {
+      width: 80px;
+      height: 80px;
+    }
+  
+    .product-list-container .delete {
+      padding: 6px 10px;
+      font-size: 14px;
+    }
+    .orders-container {
+      margin: 10px;
+      padding: 10px;
+    }
+  
+    .orders-container h2 {
+      font-size: 18px;
+    }
+  
+    .orders-container table {
+      display: block;
+      border: none;
+    }
+  
+    .orders-container thead {
+      display: none;
+    }
+  
+    .orders-container tbody {
+      display: block;
+    }
+  
+    .orders-container tr {
+      display: flex;
+      flex-direction: column;
+      border: 1px solid #ddd;
+      margin-bottom: 10px;
+      background-color: #fff;
+    }
+  
+    .orders-container td {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px;
+      border: none;
+      border-bottom: 1px solid #ddd;
+    }
+  
+    .orders-container td:last-child {
+      border-bottom: none;
+    }
+  
+    .orders-container td::before {
+      content: attr(data-label);
+      font-weight: bold;
+      color: #555;
+    }
+  
+    .orders-container select {
+      font-size: 14px;
+      padding: 8px;
+    }
+  
+    .orders-container .delete {
+      font-size: 14px;
+      padding: 6px 10px;
+    }
+  }
+  
