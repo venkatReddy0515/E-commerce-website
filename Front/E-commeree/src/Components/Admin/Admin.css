@@ -11,7 +11,7 @@
   /* Admin Panel Heading */
   h4 {
     font-size: 24px;
-    color: #007BFF;
+    color: rgb(201, 127, 201);
     margin-bottom: 20px;
     text-transform: uppercase;
   }
@@ -34,15 +34,18 @@
   
   input:focus {
     outline: none;
-    border-color: #007BFF;
+    border-color: thistle;
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
   }
   
-  /* Button Styling */
+  button a{
+    text-decoration: none;
+    color:whitesmoke;
+  }
   button.submit {
     padding: 10px 15px;
     font-size: 16px;
-    background-color: #007BFF;
+    background-color: #1e1e1e;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -51,7 +54,7 @@
   }
   
   button.submit:hover {
-    background-color: #0056b3;
+    background-color: thistle;
   }
   
   /* Responsive Design */
