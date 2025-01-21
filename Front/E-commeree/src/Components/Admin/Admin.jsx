@@ -1,11 +1,13 @@
 import { useState } from "react";
 import Axios from "axios";
 import "./Admin.css"
+import {Link, useNavigate}from "react-router-dom"
 function Admin(){
+    const navigate=useNavigate();
     const [email,setEmail]=useState('venkatAdmin@gmail.com');
     const [password,setPassword]=useState('Admin1234');
     const [admin,setAdmin]=useState('');
-
+    
     return(
         <>
         <div className="DIV">
@@ -16,7 +18,7 @@ function Admin(){
 
                                     </div>
                                     
-                                    <button className="submit">Login</button>
+                                    <button className="submit"><Link to="https://mernmarketadmin.onrender.com/">Login</Link></button>
         </div>
         </>
     )
